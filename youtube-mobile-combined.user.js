@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Studio & Posts Mobile Enhancement
 // @namespace    github.com/iansquenet
-// @version      2.6.2
+// @version      2.6.3
 // @description  Makes YouTube Studio and post creation interface truly mobile-friendly with proper responsive design
 // @author       iansquenet
 // @match        *://*.youtube.com/*
@@ -18,7 +18,7 @@
 /* ==UserStyle==
 @name           YouTube Studio & Posts Mobile Enhancement
 @namespace      github.com/iansquenet
-@version        2.6.2
+@version        2.6.3
 @description    Makes YouTube Studio and post creation interface truly mobile-friendly
 @author         iansquenet
 ==/UserStyle== */
@@ -210,6 +210,13 @@
         ytcp-video-list-cell[id*="video-list-cell-video"] { /* More robust selector */
             flex-basis: 100% !important; /* Take full width on its own line */
             order: -1; /* Ensure it comes first */
+        }
+
+        /* Recent subscribers card */
+        ytcd-recent-activity-subscribers .subscriber-row {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
         }
 
         /* Video thumbnail and info layout */
