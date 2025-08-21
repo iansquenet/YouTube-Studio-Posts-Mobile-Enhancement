@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Studio & Posts Mobile Enhancement
 // @namespace    github.com/iansquenet
-// @version      2.6.0
+// @version      2.6.2
 // @description  Makes YouTube Studio and post creation interface truly mobile-friendly with proper responsive design
 // @author       iansquenet
 // @match        *://*.youtube.com/*
@@ -18,7 +18,7 @@
 /* ==UserStyle==
 @name           YouTube Studio & Posts Mobile Enhancement
 @namespace      github.com/iansquenet
-@version        2.6.0
+@version        2.6.2
 @description    Makes YouTube Studio and post creation interface truly mobile-friendly
 @author         iansquenet
 ==/UserStyle== */
@@ -189,12 +189,27 @@
         }
 
         /* Video List/Table - Mobile Optimized */
-        ytcp-video-list-cell,
         ytcp-video-row {
-            display: block !important;
-            width: 100% !important;
-            padding: 12px !important;
+            display: flex !important;
+            flex-wrap: wrap !important; /* Allow columns to wrap */
+            align-items: flex-start !important;
+            padding: 8px 0 !important; /* Reduce vertical padding */
             border-bottom: 1px solid var(--ytcp-divider) !important;
+            gap: 8px; /* Space between wrapped items */
+        }
+
+        ytcp-video-list-cell {
+            padding: 4px !important; /* Reduce padding on each cell */
+            flex: 1 1 120px; /* Allow cells to grow and shrink */
+            min-width: 120px; /* Prevent cells from becoming too narrow */
+            display: flex;
+            align-items: center;
+        }
+
+        /* Ensure the main video cell has more space and is always first */
+        ytcp-video-list-cell[id*="video-list-cell-video"] { /* More robust selector */
+            flex-basis: 100% !important; /* Take full width on its own line */
+            order: -1; /* Ensure it comes first */
         }
 
         /* Video thumbnail and info layout */
