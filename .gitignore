@@ -1,0 +1,22 @@
+# Ignore cached files and logs
+*.html
+*.gif
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.zip
+*.txt
+*.log
+
+# Ignore specific directories
+/hts-cache/
+/accounts.google.com/
+/fonts.gstatic.com/
+/ssl.gstatic.com/
+/www.google.com/
+/www.gstatic.com/
+/www.w3.org/
+
+# Ignore the qodo config file
+qodo.config.json
